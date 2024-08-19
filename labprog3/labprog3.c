@@ -25,6 +25,7 @@ void action(){
 	}
 	
 	printf("\nThe File %s, it's descriptor value is  %d\n",hlgs_filename,hlgs_fd);
+	close(hlgs_fd);
 
 }
 
