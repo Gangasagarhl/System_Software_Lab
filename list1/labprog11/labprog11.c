@@ -76,11 +76,32 @@ int main(int a,char* ar[]){
   }
  //here I'm placing the pointer to the end'
  //lseek(hlgs_dup2,-1,SEEK_END);
- char *content3 = "Appending the content through dup2 system call, the last.\nThank you!!\n";
- printf("DUPs turn: %s\n",content3);
+ char *content3 = "Appending the content through dup2 system call\n";
+ printf("DUP2s turn: %s\n",content3);
  write(hlgs_fd, content3, strlen(content3));
  clear();
  
+
+//********************************
+//fcntl
+char *content4 = "Appending the content through fcntl system call, the last.\nThank you!!\n";
+ int fdf = fcntl(hlgs_fd, F_DUPFD, 0);
+ if(fdf == -1){
+ printf("Error in duplicating:\n");
+ close(fdf);
+ return 0;
+ }
+ 
+ //This enables appending.
+ if (fcntl(fdf, F_SETFL, O_APPEND) == -1) {
+        perror("Error setting file status flags");
+        close(fdf);
+        return 1;
+    }
+ 
+ 
+ printf("FCNTL: %s\n",content4);
+ write(fdf,content4,strlen(content4));
  
 
  

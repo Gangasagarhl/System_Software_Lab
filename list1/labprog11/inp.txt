@@ -1,4 +1,5 @@
 Appending the contents to the file using orignal file descriptor
 Appendign the content through dup system call
-Appending the content through dup2 system call, the last.
+Appending the content through dup2 system call
+Appending the content through fcntl system call, the last.
 Thank you!!
