@@ -43,6 +43,9 @@ int main(){
 	write(filed, &buf, sizeof(buf));
 	//Because of above, we are overwritng.
 	
+	printf("Press Enter to come out of lock(critical section)\n");
+	getchar();
+	//getchar();
 	
         mylock.l_type = F_UNLCK;
         // after all the operations to be performed, now it getting unlocked.

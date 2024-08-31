@@ -25,7 +25,7 @@ int tower;
 //Now initialising the database with some values , and table structure is mentioned according above mentioed structure
 void dbinitalise(){
  int wrt;
- printf("We have 2 towers and Number of disks under it is modifable\n");
+ printf("We have 3 towers and Number of disks under it is modifable\n");
  printf("Initlaising\n");
  
  
@@ -36,8 +36,8 @@ void dbinitalise(){
  }
  
  //initlaising the structure
- struct TOD t[2];// considered 2 disks 
- for(int i=0;i<2;i++){
+ struct TOD t[3];// considered 2 disks 
+ for(int i=0;i<3;i++){
  
  printf("\nPlease enter number of disks to be at tower %d: ",(i+1));
  scanf("%d",&t[i].disk);
@@ -63,7 +63,7 @@ void debugread(){
   int rd;
   int file = open("textfiles/18db.txt",O_RDONLY);
   struct TOD check;
-  for(int i=0;i<2;i++ ){
+  for(int i=0;i<3;i++ ){
     rd = read(file,&check,sizeof(check));
     printf("Disk:%d\nTower:%d\n\n",check.disk,check.tower);
   }
@@ -219,7 +219,7 @@ int main(){
   if (choice==1){
   //readlock
   int twr;
-  printf("Press\n 1.Tower1 and 2.Tower2\n");
+  printf("Press\n 1.Tower1 ,  2.Tower2  and 3.Tower3\n");
   scanf("%d",&twr);
   readlock(twr);
   
@@ -229,7 +229,7 @@ int main(){
   
    int twr;
    printf("Tower content to be changed:\n");
-   printf("Press\n 1.Tower1 and 2.Tower2\n");
+   printf("Press\n 1.Tower1 ,  2.Tower2  and 3.Tower3\n");
    scanf("%d",&twr);
    writelock(twr);
    
