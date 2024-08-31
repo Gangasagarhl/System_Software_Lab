@@ -59,7 +59,7 @@ int main(int a,char* ar[]){
  //lseek(hlgs_dup,-1,SEEK_END);
  char *content2 = "Appendign the content through dup system call\n";
  printf("DUPs turn: %s\n",content2);
- write(hlgs_fd, content2, strlen(content2));
+ write(hlgs_dup, content2, strlen(content2));
  clear();
  
  
@@ -78,7 +78,7 @@ int main(int a,char* ar[]){
  //lseek(hlgs_dup2,-1,SEEK_END);
  char *content3 = "Appending the content through dup2 system call\n";
  printf("DUP2s turn: %s\n",content3);
- write(hlgs_fd, content3, strlen(content3));
+ write(hlgs_dup2, content3, strlen(content3));
  clear();
  
 
