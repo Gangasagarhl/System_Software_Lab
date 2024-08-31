@@ -32,8 +32,8 @@ void main(int argc, char *argv[])
         time(&now); 
         deadline = localtime(&now);
         deadline->tm_hour = hrs;
-        deadline->tm_min = argv[2] == NULL ? 0 : min;
-        deadline->tm_sec = argv[3] == NULL ? 0 : sec;
+        deadline->tm_min = min;
+        deadline->tm_sec = sec;
         specific_time = mktime(deadline); // 
         if (!fork()) 
         {
@@ -49,6 +49,9 @@ void main(int argc, char *argv[])
             printf("\nTILL NOW DAEMON WAS WORKING AS AN ORPHAN \nNOW IT WILL EXIT\n");
             exit(0);
         }
-        exit(0);
+        else{   
+        //parent is getting exited.
+        exit(0); }
+        
     }
 
