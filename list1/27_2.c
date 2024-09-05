@@ -9,7 +9,7 @@ DESCRIPTION: Write a program to execute ls -Rl by the following system calls
 #include <stdio.h>
 
 int main() {
-  char *args[] = {"ls", "-RL", NULL};
+  char *args[] = {"ls", "-Rl", NULL};
   
   printf("Using execlp function call\n");
   int ret = execlp("ls", args[0], args[1], NULL);

@@ -10,7 +10,7 @@ execv
 
 int main() {
   // Define the command to execute
-  char *args[] = {"ls", "-Rh", NULL};
+  char *args[] = {"ls", "-Rl", NULL};
 
   // Execute the specified command with the given environment variables
   printf("Execv system call is used\n");

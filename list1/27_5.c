@@ -8,7 +8,7 @@ execvp
 #include <stdio.h>
 
 int main() {
-    char *args[] = {"ls", "-RL", NULL};
+    char *args[] = {"ls", "-Rl", NULL};
      printf("execvp system call\n");
     // Execute the "ls -RL" command using execlp
     int ret = execvp("ls", args	);

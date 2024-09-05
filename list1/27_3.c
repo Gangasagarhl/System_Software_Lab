@@ -9,7 +9,7 @@ c.execle
 #include<stdio.h>
 
 int main() {
-  char *args[] = {"ls", "-Rh", NULL};
+  char *args[] = {"ls", "-Rl", NULL};
   char *envp[] = {"PATH=/bin:/usr/bin", NULL};
   
   printf("Using exele function call\n");

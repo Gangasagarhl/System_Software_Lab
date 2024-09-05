@@ -20,7 +20,7 @@ int main() {
         pid_t f2 = fork();
 
         if (f2 == 0) {
-            sleep(10);
+            sleep(5);
             printf("Child 2\n parent id %d\n child id %d\n\n", getppid(), getpid());
         }
          else {
