@@ -5,7 +5,7 @@ AUHTOR: GANGASAGAR HL
 ROLL NO: MT2024048
 DESCRIPTION:  Write a separate program (for each time domain) to set a interval timer in 10sec and
 10micro second
-b.ITIMER_PROF
+c.ITIMER_PROF
 
 DATE: SEP 12 2024
 TIME: 10:15PM
