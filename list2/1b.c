@@ -16,10 +16,13 @@ TIME: 9:30PM
 #include <sys/time.h>// setitimer, itimerval
 #include <signal.h>//signal, SIGVTALRM
 #include <unistd.h>// usleep
+//#include<stdlib.h>//ext
 
 // handlre function called everytime when the
 void handling_function(int signum) {
     printf("Interval Timer Expired with signum: %d!\n",signum);// signum for SIGVTALRM is 26
+    // the signal is sent from a process through kernel to another process, so the control has to handover again to kernel, so need to make exit call here. 
+    //exit(0);
 }
 
 int main() {

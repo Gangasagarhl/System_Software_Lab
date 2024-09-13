@@ -17,9 +17,18 @@ TIME: 10:15PM
 #include <sys/time.h>// setitimer,  itimerval, 
 #include <signal.h>// signal, SIGPROF
 #include <unistd.h>//sleep
+//#include <stdlib.h>//ext
 
 void handy(int signum) {
     printf("Interval Timer Expired with signum %d: \n", signum);// 27 is retunred
+    //in case of SIGSEGV, the handler keeps rolling infinite times
+    /*
+      SIGSEGV (Segmentation Fault) is a signal sent by the operating system when a process tries to access a restricted or invalid memory location. It typically occurs due to dereferencing a null or invalid pointer. This results in the abnormal termination of the process to prevent further damage.
+    */
+    
+    //exit(0);
+
+//but here we are allowing because we want to know how interval timer with respect to ITIMER_PROF
 }
 
 int main() {

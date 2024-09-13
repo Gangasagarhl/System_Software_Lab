@@ -19,9 +19,12 @@ SIGALRM is a signal in Unix-like systems that is sent to a process when a timer 
 #include <sys/time.h>// strcut itimerval,  setitimer
 #include <signal.h>//signal,SIGALRM
 #include <unistd.h>// sleep
+//#include<stdlib.h>//exit call;
 
 void handler(int signum) {
     printf("SIGALRM Called!\n");
+    //exit(0);// usually after handling the signal it has to come out of the handler by making exit call, the control stays here, it has to return to the kernel.
+    
 }
 
 int main() {
