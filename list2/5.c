@@ -39,7 +39,7 @@ int main() {
     // c. Number of clock ticks (jiffy) per second
     long ticks_per_second = sysconf(_SC_CLK_TCK);
     printf("Number of clock ticks (jiffy) per second: %ld\n", ticks_per_second);
-
+    
     // d. Maximum number of open files
     struct rlimit rlim;
     getrlimit(RLIMIT_NOFILE, &rlim);
